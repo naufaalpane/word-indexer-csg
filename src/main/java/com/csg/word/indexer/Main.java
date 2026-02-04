@@ -9,7 +9,6 @@ import main.java.com.csg.word.indexer.validation.imp.UppercaseWordValidation;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class Main {
 
@@ -53,12 +52,12 @@ public class Main {
             }
 
             FileReader fileReader = new FileReader();
-            ValidationOrchestrator engine = registerValidations();
+            ValidationOrchestrator validationOrchestrator = registerValidations();
 
             for (String fileName : args) {
                 try {
                     List<String> words = fileReader.readWordsFromFile(fileName);
-                    IndexedWord indexedWord = engine.run(words);
+                    IndexedWord indexedWord = validationOrchestrator.run(words);
 
                     printResult(indexedWord, fileName);
                 } catch (Exception e) {
