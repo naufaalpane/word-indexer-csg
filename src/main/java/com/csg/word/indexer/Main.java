@@ -3,7 +3,7 @@ package main.java.com.csg.word.indexer;
 import main.java.com.csg.word.indexer.io.FileReader;
 import main.java.com.csg.word.indexer.model.IndexedWord;
 import main.java.com.csg.word.indexer.validation.IValidation;
-import main.java.com.csg.word.indexer.validation.ValidationOrchestrator;
+import main.java.com.csg.word.indexer.orchestrator.ValidationOrchestrator;
 import main.java.com.csg.word.indexer.validation.imp.LongWordValidation;
 import main.java.com.csg.word.indexer.validation.imp.UppercaseWordValidation;
 

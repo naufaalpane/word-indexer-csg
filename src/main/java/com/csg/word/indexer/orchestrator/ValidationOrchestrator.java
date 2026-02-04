@@ -1,6 +1,7 @@
-package main.java.com.csg.word.indexer.validation;
+package main.java.com.csg.word.indexer.orchestrator;
 
 import main.java.com.csg.word.indexer.model.IndexedWord;
+import main.java.com.csg.word.indexer.validation.IValidation;
 
 import java.util.List;
 

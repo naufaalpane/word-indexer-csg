@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="word-indexer-csg:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/word_indexer_csg_jar</output-path>
+    <root id="archive" name="word-indexer-csg.jar">
+      <element id="module-output" name="word-indexer-csg" />
+    </root>
+  </artifact>
+</component>
