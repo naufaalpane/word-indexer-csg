@@ -9,6 +9,7 @@ import main.java.com.csg.word.indexer.validation.imp.UppercaseWordValidation;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
 
@@ -21,10 +22,27 @@ public class Main {
     }
 
     private void printResult(IndexedWord indexedWord, String fileName) {
-        System.out.println("File: " + fileName);
-        System.out.println("Uppercase words count: " + indexedWord.getUppercaseWordCount());
-        System.out.println("Words longer than 5 characters:");
-        indexedWord.getLongWordSet().forEach(System.out::println);
+        List<String> lines = new ArrayList<>();
+        lines.add("File: " + fileName);
+        lines.add("Uppercase words count: " + indexedWord.getUppercaseWordCount());
+        lines.add("Words longer than 5 characters:");
+
+        for (String longWord : indexedWord.getLongWordSet()) {
+            lines.add("  - " + longWord);
+        }
+
+        int maxLength = lines.stream()
+                .mapToInt(String::length)
+                .max()
+                .orElse(0);
+
+        String border = "+" + "-".repeat(maxLength + 2) + "+";
+
+        System.out.println(border);
+        for (String line : lines) {
+            System.out.println("| " + String.format("%-" + maxLength + "s", line) + " |");
+        }
+        System.out.println(border);
         System.out.println();
     }
 
